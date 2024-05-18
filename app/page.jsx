@@ -16,7 +16,7 @@ const Page = () => {
   return (
     <main className="min-h-screen w-full bg-[#060911]">
       <Navbar />
-      <div className="">
+      <div className="flex flex-col">
         <div id="home">
           <Home />
         </div>

@@ -4,7 +4,7 @@
 import { React, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import  Header from "@/app/components/Header"
+import Header from "@/app/components/Header";
 
 const About = () => {
   useEffect(() => {
@@ -67,7 +67,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 w-full pr-2 items-center mb-12">
+      <div className="flex flex-col gap-4 w-full items-center mb-6">
         <h2
           className="text-xl mt-8 lg:text-4xl font-bold tracking-wider text-[#329f9a]"
           data-aos="fade-up"
@@ -76,7 +76,7 @@ const About = () => {
           Social Media
         </h2>
         <p
-          className="text-[#c3e7e5] tracking-wider text-center text-xs leading-6 lg:leading-8 px-8"
+          className="text-[#c3e7e5] tracking-wider text-center text-xs leading-6 lg:leading-8 px-12"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
