@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Home from "./Page/home/page";
 import About from "./Page/about/page";
+import Blog from "./Page/blog/page";
 // import About from "@/app/Pages/About/page";
 
 const Page = () => {
@@ -23,7 +24,10 @@ const Page = () => {
         <div id="about">
           <About />
         </div>
-        <div className="h-screen">jhsbd</div>
+        <div id="blog">
+          <Blog />
+        </div>
+        <div className="h-screen">hahaha</div>
         {/* Tambahkan section lainnya jika diperlukan */}
       </div>
     </main>
