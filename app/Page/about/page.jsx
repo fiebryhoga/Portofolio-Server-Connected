@@ -11,12 +11,12 @@ const About = () => {
     AOS.init();
   }, []);
   return (
-    <section className="h-full lg:h-screen bg-[#080F17] lg:pt-20 pt-16 pb-12">
+    <section className="h-full lg:h-screen bg-[#080F17] lg:pt-20 pt-4 pb-12">
       <Header data-aos="fide-up" data-aos-duration="2000">
         About Me
       </Header>
-      <div className="flex flex-col lg:flex-row lg:py-16">
-        <div className="px-12 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-8">
+      <div className="flex flex-col mt-8 lg:flex-row lg:py-16">
+        <div className="px-12 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-6">
           <h2
             className=" text-xl lg:text-4xl font-bold tracking-wider text-[#329f9a]"
             data-aos="fade-right"
@@ -60,7 +60,7 @@ const About = () => {
             data-aos="fade-left"
             data-aos-duration="2000"
           >
-            <button className="relative isolation-auto z-10 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-[#329f9a] before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center px-4 py-1 lg:py-3 w-24 lg:w-44 text-sm font-semibold text-[#c3e7e5] bg-transparent border lg:border-2 border-[#329f9a] rounded-lg shadow-sm gap-x-2 hover:bg-transparent disabled:opacity-50 disabled:pointer-events-none">
+            <button className="relative isolation-auto z-10 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-[#329f9a] before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center px-20 py-2 lg:py-3 lg:w-44 text-sm font-semibold text-[#c3e7e5] bg-transparent border lg:border-2 border-[#329f9a] rounded-lg shadow-sm gap-x-2 hover:bg-transparent disabled:opacity-50 disabled:pointer-events-none">
               Send
             </button>
           </a>

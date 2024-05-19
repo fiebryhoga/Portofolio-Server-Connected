@@ -15,8 +15,8 @@ const Page = () => {
   }, []);
 
   return (
-    <main className="min-h-screen w-full bg-[#060911]">
-      <Navbar />
+    <main className="bg-[#060911]">
+      {/* <Navbar /> */}
       <div className="flex flex-col">
         <div id="home">
           <Home />
@@ -28,7 +28,7 @@ const Page = () => {
           <Blog />
         </div>
         <div className="h-screen">hahaha</div>
-        {/* Tambahkan section lainnya jika diperlukan */}
+        
       </div>
     </main>
   );
