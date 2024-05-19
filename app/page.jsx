@@ -16,7 +16,7 @@ const Page = () => {
 
   return (
     <main className="bg-[#060911]">
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="flex flex-col">
         <div id="home">
           <Home />

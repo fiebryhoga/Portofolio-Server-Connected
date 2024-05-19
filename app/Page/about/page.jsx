@@ -16,7 +16,7 @@ const About = () => {
         About Me
       </Header>
       <div className="flex flex-col mt-8 lg:flex-row lg:py-16">
-        <div className="px-12 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-6">
+        <div className="px-6 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-6">
           <h2
             className=" text-xl lg:text-4xl font-bold tracking-wider text-[#329f9a]"
             data-aos="fade-right"
@@ -25,7 +25,7 @@ const About = () => {
             Nunc Aut Nunquam
           </h2>
           <p
-            className="text-[#c3e7e5] text-xs text-justify leading-6 lg:leading-8"
+            className="text-[#c3e7e5] text-xs text-justify leading-6 lg:leading-8 pr-16"
             data-aos="fade-right"
             data-aos-duration="1000"
           >
@@ -37,7 +37,7 @@ const About = () => {
             End Developer unlocks my potential and fulfills life goals
           </p>
         </div>
-        <div className="lg:w-1/3 lg:pr-28 px-12 flex flex-col gap-4 lg:gap-6 mt-4">
+        <div className="lg:w-1/3 lg:pr-28 px-6 flex flex-col gap-4 lg:gap-6 mt-4">
           <h2
             className="text-lg lg:text-2xl font-bold tracking-wider text-[#329f9a] text-right pt-4"
             data-aos="fade-left"
@@ -46,7 +46,7 @@ const About = () => {
             Send Me Something
           </h2>
           <p
-            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8"
+            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16"
             data-aos="fade-left"
             data-aos-duration="1000"
           >

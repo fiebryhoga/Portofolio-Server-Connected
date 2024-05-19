@@ -48,7 +48,7 @@ const Blog = () => {
 
       <Header>Blog</Header>
 
-      <div className="flex flex-col px-12 pt-6 gap-6">
+      <div className="flex flex-col px-6 pt-6 gap-6">
         <input
           className="w-full border border-[#b2b8b7] bg-transparent py-2 px-6 rounded-lg outline-none text-[#b2b8b7] tracking-wider placeholder:tracking-wider"
           placeholder="Search Here"
