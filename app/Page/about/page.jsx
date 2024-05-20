@@ -16,7 +16,7 @@ const About = () => {
         About Me
       </Header>
       <div className="flex flex-col mt-8 lg:flex-row lg:py-16">
-        <div className="px-6 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-6">
+        <div className="px-6 sm:px-12 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-6">
           <h2
             className=" text-xl lg:text-4xl font-bold tracking-wider text-[#329f9a]"
             data-aos="fade-right"
@@ -25,7 +25,7 @@ const About = () => {
             Nunc Aut Nunquam
           </h2>
           <p
-            className="text-[#c3e7e5] text-xs text-justify leading-6 lg:leading-8 pr-16"
+            className="text-[#c3e7e5] text-xs text-justify leading-6 lg:leading-8 pr-16 sm:pr-20 md:pr-64"
             data-aos="fade-right"
             data-aos-duration="1000"
           >
@@ -37,7 +37,7 @@ const About = () => {
             End Developer unlocks my potential and fulfills life goals
           </p>
         </div>
-        <div className="lg:w-1/3 lg:pr-28 px-6 flex flex-col gap-4 lg:gap-6 mt-4">
+        <div className="lg:w-1/3 sm:px-12 lg:pr-28 px-6 flex flex-col gap-4 lg:gap-6 mt-4">
           <h2
             className="text-lg lg:text-2xl font-bold tracking-wider text-[#329f9a] text-right pt-4"
             data-aos="fade-left"
@@ -46,7 +46,7 @@ const About = () => {
             Send Me Something
           </h2>
           <p
-            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16"
+            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16 sm:pl-20 md:pl-64"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
@@ -67,7 +67,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 w-full items-center mb-6">
+      <div className="flex flex-col sm:px-12 gap-4 w-full items-center mt-4 mb-6">
         <h2
           className="text-xl mt-8 lg:text-4xl font-bold tracking-wider text-[#329f9a]"
           data-aos="fade-up"
@@ -80,13 +80,13 @@ const About = () => {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          I can assist you in creating web or mobile aplicat
+          I can assist you in creating web or mobile aplications
           <br className="hidden md:block" />
           Don't forget to follow or connect with me on social media for updates!
         </p>
       </div>
       <div className="flex flex-col lg:flex-row relative lg:py-4 justify-center items-center gap-2">
-        <div className="flex flex-row relative transition-all duration-300 pl-4 md:pl-0">
+        <div className="flex flex-row relative transition-all duration-300 pl-4 md:pl-4 md">
           <button
             className="group w-12 hover:w-44 h-12 relative text-neutral-50 duration-300 before:duration-300 before:hover:500 font-medium tracking-wider flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:w-6 before:h-6  before:rotate-45"
             data-aos="fade-up"

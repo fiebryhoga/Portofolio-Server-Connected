@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/app/components/Header";
 import blogs from "@/app/data/blog";
 
@@ -8,10 +8,34 @@ const Blog = () => {
   const [visibleBlogs, setVisibleBlogs] = useState(4);
   const [showMore, setShowMore] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const handleMediaQueryChange = (event) => {
+      setIsMediumScreen(event.matches);
+      setVisibleBlogs(event.matches ? 8 : 4);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Initial check
+    setIsMediumScreen(mediaQuery.matches);
+    setVisibleBlogs(mediaQuery.matches ? 8 : 4);
+
+    // Cleanup listener on component unmount
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
 
   const toggleShowMore = () => {
-    setVisibleBlogs(visibleBlogs + 4);
-    setShowMore(visibleBlogs + 4 < blogs.length);
+    setVisibleBlogs((prevVisibleBlogs) => {
+      const increment = isMediumScreen ? 8 : 4;
+      const newVisibleBlogs = prevVisibleBlogs + increment;
+      setShowMore(newVisibleBlogs < blogs.length);
+      return newVisibleBlogs;
+    });
   };
 
   const toggleHide = () => {
@@ -48,45 +72,47 @@ const Blog = () => {
 
       <Header>Blog</Header>
 
-      <div className="flex flex-col px-6 pt-6 gap-6">
+      <div className="flex flex-col px-6 sm:px-12 pt-6 gap-6 sm:gap-4 md:gap-8">
         <input
-          className="w-full border border-[#b2b8b7] bg-transparent py-2 px-6 rounded-lg outline-none text-[#b2b8b7] tracking-wider placeholder:tracking-wider"
+          className="w-full border-opacity-60 border border-[#b2b8b7] bg-transparent py-2 px-6 rounded-lg outline-none text-[#b2b8b7] tracking-wider placeholder:tracking-wider"
           placeholder="Search Here"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        {filteredBlogs.slice(0, visibleBlogs).map((blog) => (
-          <div key={blog.id} className="flex flex-col w-full">
-            <div className="flex flex-row w-full min-h-28 rounded-xl gap-3">
-              <div className="flex flex-col w-full">
-                <p className="text-white text-[10px] font-medium">
-                  {blog.penulis},{" "}
-                  {new Date(blog.tanggal).toLocaleDateString("id-ID", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </p>
-                <h3 className="text-white text-sm font-semibold mt-3">
-                  {truncateText(blog.judul, 5)}
-                </h3>
-                <p className="text-white text-xs font-medium mt-2">
-                  {truncateText(blog.deskripsi, 8)}
-                </p>
+        <div className="grid grid-cols-1 gap-8 sm:gap-8 md:gap-8 w-full md:grid-cols-2 mt:-4 h-auto justify-center items-start">
+          {filteredBlogs.slice(0, visibleBlogs).map((blog) => (
+            <div key={blog.id} className="flex flex-col w-full sm:pb-4">
+              <div className="flex flex-row w-full min-h-28 md:h-auto justify-center rounded-xl gap-3">
+                <div className="flex flex-col w-full">
+                  <p className="text-white opacity-50 text-[10px] font-medium">
+                    {blog.penulis},{" "}
+                    {new Date(blog.tanggal).toLocaleDateString("id-ID", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </p>
+                  <h3 className="text-white text-sm font-semibold mt-3">
+                    {truncateText(blog.judul, 5)}
+                  </h3>
+                  <p className="text-white opacity-75 text-xs font-medium mt-2">
+                    {truncateText(blog.deskripsi, 8)}
+                  </p>
+                </div>
+                <div className="h-full w-40 flex items-end md:items-center">
+                  <img
+                    src={blog.image}
+                    alt={blog.judul}
+                    className="h-24 w-full rounded-lg object-cover"
+                  />
+                </div>
               </div>
-              <div className="h-full w-40 flex items-end">
-                <img
-                  src={blog.image}
-                  alt={blog.judul}
-                  className="h-24 w-full rounded-lg object-cover"
-                />
-              </div>
+              <hr className="text-white border-[0.1px] -mt-2 sm:-mt-1 opacity-25" />
             </div>
-            <hr className="text-white border-[0.1px] mt-2" />
-          </div>
-        ))}
+          ))}
+        </div>
 
         <div className="flex flex-row w-full justify-center ietms-center gap-2">
           {blogs.length > visibleBlogs && showMore && (

@@ -3,7 +3,7 @@ const blogs = [
     id: 1,
     penulis: "Dimas Fiebry",
     tanggal: "2022-05-14",
-    image: "https://example.com/image1.jpg",
+    image: "/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Pemanfaatan Teknologi AI dalam Kehidupan Sehari-hari",
     deskripsi:
       "Teknologi AI semakin merambah ke berbagai aspek kehidupan manusia...",
@@ -18,7 +18,7 @@ const blogs = [
     id: 2,
     penulis: "Dimas Fiebry",
     tanggal: "2023-01-18",
-    image: "https://example.com/image2.jpg",
+    image: "/assets/image/blog/pexels-googledeepmind-18069157.jpg",
     judul: "Keamanan Siber di Era Digital",
     deskripsi:
       "Di era digital ini, keamanan siber menjadi salah satu hal yang sangat penting...",
@@ -33,7 +33,7 @@ const blogs = [
     id: 3,
     penulis: "Dimas Fiebry",
     tanggal: "2023-07-22",
-    image: "https://example.com/image3.jpg",
+    image: "/assets/image/blog/pexels-kindelmedia-8566474.jpg",
     judul: "Pentingnya Keterampilan Digital di Dunia Kerja Modern",
     deskripsi:
       "Dalam dunia kerja modern, keterampilan digital menjadi salah satu kunci kesuksesan...",
@@ -48,7 +48,7 @@ const blogs = [
     id: 4,
     penulis: "Dimas Fiebry",
     tanggal: "2023-11-10",
-    image: "https://example.com/image4.jpg",
+    image: "/assets/image/blog/pexels-tara-winstead-8386440.jpg",
     judul: "Peran Teknologi dalam Pendidikan di Masa Pandemi",
     deskripsi:
       "Pandemi COVID-19 telah mengubah cara kita belajar dan mengajar, peran teknologi semakin vital...",
@@ -63,7 +63,7 @@ const blogs = [
     id: 5,
     penulis: "Dimas Fiebry",
     tanggal: "2024-03-05",
-    image: "https://example.com/image5.jpg",
+    image: "https/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Transformasi Digital dalam Dunia Bisnis",
     deskripsi:
       "Transformasi digital membawa perubahan besar dalam dunia bisnis, meningkatkan efisiensi dan inovasi...",
@@ -80,7 +80,7 @@ const blogs = [
     id: 6,
     penulis: "Dimas Fiebry",
     tanggal: "2023-10-30",
-    image: "https://example.com/image6.jpg",
+    image: "https/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Pengaruh Internet of Things (IoT) dalam Kehidupan Sehari-hari",
     deskripsi:
       "Internet of Things (IoT) telah membawa revolusi besar dalam berbagai aspek kehidupan...",
@@ -95,7 +95,7 @@ const blogs = [
     id: 7,
     penulis: "Dimas Fiebry",
     tanggal: "2023-12-15",
-    image: "https://example.com/image7.jpg",
+    image: "https/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Masa Depan Teknologi Blockchain",
     deskripsi:
       "Blockchain telah menjadi topik yang sangat populer dalam beberapa tahun terakhir...",
@@ -109,7 +109,7 @@ const blogs = [
     id: 8,
     penulis: "Dimas Fiebry",
     tanggal: "2024-03-20",
-    image: "https://example.com/image8.jpg",
+    image: "https/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Kemajuan Teknologi Virtual Reality (VR)",
     deskripsi:
       "Virtual Reality (VR) telah berkembang pesat dalam beberapa tahun terakhir...",
@@ -123,7 +123,7 @@ const blogs = [
     id: 9,
     penulis: "Dimas Fiebry",
     tanggal: "2024-05-05",
-    image: "https://example.com/image9.jpg",
+    image: "https/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Pemanfaatan Teknologi 5G dalam Industri",
     deskripsi:
       "Teknologi 5G telah menjadi salah satu inovasi terbesar dalam industri telekomunikasi...",
@@ -137,7 +137,7 @@ const blogs = [
     id: 10,
     penulis: "Dimas Fiebry",
     tanggal: "2024-06-10",
-    image: "https://example.com/image10.jpg",
+    image: "/assets/image/blog/pexels-airamdphoto-15940009.jpg",
     judul: "Kecerdasan Buatan dan Masa Depan Pendidikan",
     deskripsi:
       "Kecerdasan Buatan (AI) telah membawa perubahan besar dalam dunia pendidikan...",

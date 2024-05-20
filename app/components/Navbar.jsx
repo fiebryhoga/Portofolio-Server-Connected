@@ -26,7 +26,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full justify-between pr-6 md:pr-0 md:justify-normal z-50 fixed flex flex-row md:gap-40 bg-transparent py-5 border-b border-b-gray-200 border-opacity-15 items-center backdrop-blur-lg">
+    <div className="w-full justify-between pr-6 sm:pr-12 md:pr-0 md:justify-normal z-50 fixed flex flex-row md:gap-16 bg-transparent py-5 border-b border-b-gray-200 border-opacity-15 items-center backdrop-blur-lg">
       <Link href="/" passHref>
         <Header>dimasfiebry</Header>
       </Link>
