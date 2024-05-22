@@ -37,7 +37,7 @@ const About = () => {
             End Developer unlocks my potential and fulfills life goals
           </p>
         </div>
-        <div className="lg:w-1/3 sm:px-12 lg:pr-28 px-6 flex flex-col gap-4 lg:gap-6 mt-4 lg:mt-0">
+        <div className="lg:w-1/3 sm:px-12 lg:pr-28 lg:px-0 px-6 flex flex-col gap-4 lg:gap-6 mt-4 lg:mt-0">
           <h2
             className="text-lg lg:text-2xl font-bold tracking-wider text-[#329f9a] text-right pt-4"
             data-aos="fade-left"
@@ -46,7 +46,7 @@ const About = () => {
             Send Me Something
           </h2>
           <p
-            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16 sm:pl-20 md:pl-64 xl:pl-0 lg:text-base "
+            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16 sm:pl-20 md:pl-64 lg:pl-0 lg:text-base"
             data-aos="fade-left"
             data-aos-duration="1000"
           >

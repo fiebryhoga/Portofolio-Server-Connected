@@ -2,6 +2,15 @@
 import React from "react";
 import { useRouter } from "next/navigation"; // Import useRouter
 
+// Utility function to truncate text by word limit
+const truncateText = (text, wordLimit) => {
+  const words = text.split(" ");
+  if (words.length > wordLimit) {
+    return words.slice(0, wordLimit).join(" ") + " ...";
+  }
+  return text;
+};
+
 const BlogCard = ({ id, penulis, tanggal, judul, deskripsi, image }) => {
   const router = useRouter(); // Initialize useRouter
 
@@ -12,18 +21,20 @@ const BlogCard = ({ id, penulis, tanggal, judul, deskripsi, image }) => {
   return (
     <div
       onClick={handleClick}
-      className="flex flex-row w-full border-[0.1px] border-white border-opacity-20 h-40 py-4 px-8 justify-between rounded-lg bg-[#080F17] lg:gap-4 cursor-pointer" // Add cursor-pointer to indicate it's clickable
+      className="flex flex-row w-full border-[0.1px] md:h-40 border-white border-opacity-20 lg:h-40 py-4 px-8 justify-between rounded-lg bg-[#080F17] lg:gap-4 cursor-pointer" // Add cursor-pointer to indicate it's clickable
     >
       <div className="flex flex-col gap-2 text-xs w-3/4">
-        <p className="text-white text-opacity-40">
+        <p className="text-white text-opacity-40 lg:text-sm text-xs">
           {penulis}, {tanggal}
         </p>
-        <h4 className="text-xl font-bold text-white">{judul}</h4>
-        <p className="text-sm font-normal text-white text-opacity-80 tracking-wide">
-          {deskripsi}
+        <h4 className="text-xl font-bold text-white md:text-base">
+          {truncateText(judul, 5)}
+        </h4>
+        <p className="lg:text-sm font-normal text-white text-opacity-80 tracking-wide md:text-xs">
+          {truncateText(deskripsi, 8)}
         </p>
       </div>
-      <div className="w-32 rounded-lg">
+      <div className="w-32 rounded-lg h-32">
         <img
           className="object-cover w-full h-full rounded-lg"
           src={image}

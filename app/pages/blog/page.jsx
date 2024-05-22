@@ -1,18 +1,36 @@
 /* eslint-disable @next/next/no-css-tags */
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Header from "@/app/components/layout/Header";
 import BlogList from "@/app/components/blog/BlogList";
-import blogsData from "@/app/data/blog"; // Pastikan penamaan impor benar
 
 const Blog = () => {
   const router = useRouter();
-  const [showAllCards, setShowAllCards] = useState(false);
+  const [blogs, setBlogs] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch("http://localhost:8000/api/blogs");
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+        setError("Failed to load blogs");
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   const navigateToBlogDashboard = () => {
-    router.push("pages/blogDashboard");
+    router.push("/pages/blogDashboard");
   };
 
   return (
@@ -32,7 +50,11 @@ const Blog = () => {
       <Header>Blog</Header>
 
       <div className="flex flex-col px-6 sm:px-12 pt-12 gap-6 sm:gap-4 md:gap-8 lg:px-28">
-        <BlogList blogs={blogsData} showAllCards={showAllCards} />
+        {error ? (
+          <p className="text-red-500">{error}</p>
+        ) : (
+          <BlogList blogs={blogs.slice(0, 6)} showAllCards={false} />
+        )}
         <button
           className="text-[#329f9a] border border-[#329f9a] rounded-lg py-2 px-4 mt-4 self-center"
           onClick={navigateToBlogDashboard}
