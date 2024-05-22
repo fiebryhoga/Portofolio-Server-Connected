@@ -16,7 +16,7 @@ const BlogDashboard = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/blogs");
+        const res = await fetch("https://localhost:8000/api/blogs");
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
