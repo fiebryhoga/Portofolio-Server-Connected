@@ -4,7 +4,7 @@
 import { React, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/layout/Header";
 
 const About = () => {
   useEffect(() => {
@@ -15,8 +15,8 @@ const About = () => {
       <Header data-aos="fide-up" data-aos-duration="2000">
         About Me
       </Header>
-      <div className="flex flex-col mt-8 lg:flex-row lg:py-16">
-        <div className="px-6 sm:px-12 lg:px-28 lg:pr-36 lg:w-2/3 flex flex-col gap-6">
+      <div className="flex flex-col mt-8 lg:flex-row lg:py-4">
+        <div className="px-6 sm:px-12 lg:pl-28 lg:pr-10 lg:w-2/3 flex flex-col gap-6 lg:gap-12">
           <h2
             className=" text-xl lg:text-4xl font-bold tracking-wider text-[#329f9a]"
             data-aos="fade-right"
@@ -25,7 +25,7 @@ const About = () => {
             Nunc Aut Nunquam
           </h2>
           <p
-            className="text-[#c3e7e5] text-xs text-justify leading-6 lg:leading-8 pr-16 sm:pr-20 md:pr-64"
+            className="text-[#c3e7e5] text-xs text-justify leading-6 lg:leading-8 pr-16 sm:pr-20 md:pr-64 lg:pr-32 lg:text-base "
             data-aos="fade-right"
             data-aos-duration="1000"
           >
@@ -37,7 +37,7 @@ const About = () => {
             End Developer unlocks my potential and fulfills life goals
           </p>
         </div>
-        <div className="lg:w-1/3 sm:px-12 lg:pr-28 px-6 flex flex-col gap-4 lg:gap-6 mt-4">
+        <div className="lg:w-1/3 sm:px-12 lg:pr-28 px-6 flex flex-col gap-4 lg:gap-6 mt-4 lg:mt-0">
           <h2
             className="text-lg lg:text-2xl font-bold tracking-wider text-[#329f9a] text-right pt-4"
             data-aos="fade-left"
@@ -46,7 +46,7 @@ const About = () => {
             Send Me Something
           </h2>
           <p
-            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16 sm:pl-20 md:pl-64"
+            className="text-[#c3e7e5] text-right text-xs leading-6 lg:leading-8 pl-16 sm:pl-20 md:pl-64 xl:pl-0 lg:text-base "
             data-aos="fade-left"
             data-aos-duration="1000"
           >
@@ -58,7 +58,9 @@ const About = () => {
             href="https://ngl.link/NGL"
             className="flex justify-end"
             data-aos="fade-left"
+            ata-aos-offset="0"
             data-aos-duration="2000"
+            data-aos-anchor-placement="bottom-bottom"
           >
             <button className="relative isolation-auto z-10 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-[#329f9a] before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center px-20 py-2 lg:py-3 lg:w-44 text-sm font-semibold text-[#c3e7e5] bg-transparent border lg:border-2 border-[#329f9a] rounded-lg shadow-sm gap-x-2 hover:bg-transparent disabled:opacity-50 disabled:pointer-events-none">
               Send
@@ -76,7 +78,7 @@ const About = () => {
           Social Media
         </h2>
         <p
-          className="text-[#c3e7e5] tracking-wider text-center text-xs leading-6 lg:leading-8 px-12"
+          className="text-[#c3e7e5] tracking-wider text-center text-xs leading-6 lg:leading-8 px-12 lg:text-base"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -86,7 +88,7 @@ const About = () => {
         </p>
       </div>
       <div className="flex flex-col lg:flex-row relative lg:py-4 justify-center items-center gap-2">
-        <div className="flex flex-row relative transition-all duration-300 pl-4 md:pl-4 md">
+        <div className="flex flex-row relative transition-all duration-300 pl-4 md:pl-4">
           <button
             className="group w-12 hover:w-44 h-12 relative text-neutral-50 duration-300 before:duration-300 before:hover:500 font-medium tracking-wider flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:w-6 before:h-6  before:rotate-45"
             data-aos="fade-up"

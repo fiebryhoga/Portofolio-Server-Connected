@@ -1,12 +1,12 @@
 "use client";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import { React, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Home from "./Page/home/page";
-import About from "./Page/about/page";
-import Blog from "./Page/blog/page";
+import Home from "./pages/home/page";
+import About from "./pages/about/page";
+import Blog from "./pages/blog/page";
 // import About from "@/app/Pages/About/page";
 
 const Page = () => {
