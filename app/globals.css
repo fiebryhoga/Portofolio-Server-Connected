@@ -31,7 +31,7 @@ body, html {
 }
 
 .navbar {
-  @apply py-3 flex rounded-lg bg-black bg-opacity-10 border border-white border-opacity-40 px-6 transition-opacity duration-500;
+  @apply flex ;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
