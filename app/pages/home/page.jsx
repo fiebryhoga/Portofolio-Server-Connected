@@ -20,7 +20,7 @@ const BackgroundDiv = styled.div`
   position: relative;
 
   @media (min-width: 768px) {
-    height: 120vh;
+    height: 100vh;
     background-size: 700px;
     background-position: right calc(100% - 60px);
   }
@@ -38,6 +38,7 @@ const Home = () => {
 
   return (
     <BackgroundDiv className="">
+      <div className="h-16 sm-h-8 md:h-10 lg:hidden xl:h-16 bg-[#080F17] "></div>
       <svg
         className="z-20 top-0 opacity-20 w-full lg:absolute"
         xmlns="http://www.w3.org/2000/svg"
@@ -49,23 +50,48 @@ const Home = () => {
           d="M0,256L17.1,224C34.3,192,69,128,103,101.3C137.1,75,171,85,206,112C240,139,274,181,309,192C342.9,203,377,181,411,160C445.7,139,480,117,514,101.3C548.6,85,583,75,617,85.3C651.4,96,686,128,720,133.3C754.3,139,789,117,823,101.3C857.1,85,891,75,926,106.7C960,139,994,213,1029,250.7C1062.9,288,1097,288,1131,256C1165.7,224,1200,160,1234,154.7C1268.6,149,1303,203,1337,234.7C1371.4,267,1406,277,1423,282.7L1440,288L1440,0L1422.9,0C1405.7,0,1371,0,1337,0C1302.9,0,1269,0,1234,0C1200,0,1166,0,1131,0C1097.1,0,1063,0,1029,0C994.3,0,960,0,926,0C891.4,0,857,0,823,0C788.6,0,754,0,720,0C685.7,0,651,0,617,0C582.9,0,549,0,514,0C480,0,446,0,411,0C377.1,0,343,0,309,0C274.3,0,240,0,206,0C171.4,0,137,0,103,0C68.6,0,34,0,17,0L0,0Z"
         ></path>
       </svg>
-      <div className="w-full flex flex-col md:flex-row mt-16 sm:mt-6 md:mt-16 lg:mt-64">
+      <div className="w-full flex flex-col md:flex-row mt-0 sm:mt-6 md:mt-0 lg:mt-64">
         <div className="px-6 sm:pl-12 sm:pr-72 md:px-12 md:pr-44 lg:px-28 w-full flex flex-col justify-center gap-2 lg:gap-4">
-          <h3 className="py-4 text-sm sm:text-base font-semibold tracking-wider text-[#329f9a] lg:text-lg">
+          <h3
+            className="py-4 text-sm sm:text-base font-semibold tracking-wider text-[#329f9a] lg:text-lg"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
             Hello There! I'm
           </h3>
-          <h1 className="text-lg sm:text-xl font-semibold tracking-wider text-[#c3e7e5] lg:text-4xl">
+          <h1
+            className="text-lg sm:text-xl font-semibold tracking-wider text-[#c3e7e5] lg:text-4xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
             Dimas Fiebry Prayhoga Putra
           </h1>
-          <h3 className="text-xs sm:text-sm font-medium tracking-wide text-[#c3e7e5] lg:text-lg">
+          <h3
+            className="text-xs sm:text-sm font-medium tracking-wide text-[#c3e7e5] lg:text-lg"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-delay="300"
+          >
             Brawijaya University Student
           </h3>
-          <p className="text-xs font-normal tracking-wide py-6 opacity-60 leading-5 text-justify md:pr-32 text-[#c3e7e5] lg:w-[800px] lg:text-base">
+          <p
+            className="text-xs font-normal tracking-wide py-6 opacity-60 leading-5 text-justify md:pr-32 text-[#c3e7e5] lg:w-[800px] lg:text-base"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-delay="500"
+          >
             I am interested in a career as a frontend developer. I dream of
             coding while sipping coffee and enjoying the sunset. I will help you
             to make web or mobile application, I have good team work.
           </p>
-          <button className="z-40 mt-0 py-2 text-sm rounded-full bg-[#329f9a] w-32 hover:bg-[#e9eded] hover:text-[#329f9a] transition-all ease-in-out duration-500">
+          <button
+            className="z-40 mt-0 py-2 text-sm rounded-full bg-[#329f9a] w-32 hover:bg-[#e9eded] hover:text-[#329f9a] transition-all ease-in-out duration-500"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            data-aos-delay="300"
+          >
             Contact Me
           </button>
         </div>

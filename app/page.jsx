@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "./components/layout/Navbar";
+// import Navbar from "./components/layout/Navbar";
 import { React, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,6 +9,7 @@ import About from "./pages/about/page";
 import Blog from "./pages/blog/page";
 import Project from "./pages/project/page";
 import Tools from "./pages/tools/page";
+import Navbar from "./components/layout/NavbarBox";
 // import About from "@/app/Pages/About/page";
 
 const Page = () => {
@@ -18,6 +19,7 @@ const Page = () => {
 
   return (
     <main className="bg-[#060911]">
+      {/* <NavbarBox/> */}
       <Navbar />
       <div className="flex flex-col">
         <div id="home">

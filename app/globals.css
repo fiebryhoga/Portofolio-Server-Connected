@@ -29,3 +29,19 @@ body, html {
     text-wrap: balance;
   }
 }
+
+.navbar {
+  @apply py-3 flex rounded-lg bg-black bg-opacity-10 border border-white border-opacity-40 px-6 transition-opacity duration-500;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.navbar-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar-visible {
+  opacity: 1;
+  visibility: visible;
+}
