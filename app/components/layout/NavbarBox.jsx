@@ -39,7 +39,7 @@ const Navbar = () => {
           visible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <ul className="w-full flex flex-row justify-center md:justify-between lg:px-8 xl:px-4 items-center">
+        <ul className="w-full flex flex-row justify-between px-6 sm:px-10 lg:px-8 xl:px-4 items-center">
           <li>
             <Link href="#home" legacyBehavior>
               <a>
