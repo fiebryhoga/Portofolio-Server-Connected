@@ -1,15 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 
 "use client";
-import { React, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import react from "react";
 import Header from "@/app/components/layout/Header";
 
 const About = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
   return (
     <section className="h-full lg:h-screen bg-[#080F17] lg:pt-20 pt-4 pb-12">
       <Header data-aos="fide-up" data-aos-duration="2000">

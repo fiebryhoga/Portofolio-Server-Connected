@@ -5,6 +5,7 @@ import Header from "@/app/components/layout/Header";
 import ToolsCard from "@/app/components/tools/ToolsCard";
 import { tools } from "@/app/data/tools";
 
+
 const Tools = () => {
   const [showAll, setShowAll] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -40,6 +41,8 @@ const Tools = () => {
           <button
             onClick={toggleShowAll}
             className="text-[#329f9a] border border-[#329f9a] rounded-lg py-2 px-4 mt-4 self-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             {showAll ? "Hide" : "Show More"}
           </button>

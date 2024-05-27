@@ -1,15 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React from "react";
+import react from "react";
 
 const ProjectCard = ({ project }) => {
   const { nama, gambar, deskripsi, link, tools } = project;
+
 
   return (
     <Link
       href={link}
       passHref
       className="flex flex-col min-h-96 border-[0.1px] border-opacity-40 border-rounded-xl rounded-xl border-gray-100"
+      
     >
       <div className="flex items-end rounded-t-xl h-56 sm:h-64 md:h-56 lg:h-64">
         <img

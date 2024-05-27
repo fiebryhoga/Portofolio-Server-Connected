@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useEffect } from "react";
+
 import { useRouter } from "next/navigation";
 import Header from "@/app/components/layout/Header";
 import BlogList from "@/app/components/blog/BlogList";
@@ -10,6 +11,8 @@ const Blog = () => {
   const router = useRouter();
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
+
+
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -57,6 +60,8 @@ const Blog = () => {
         )}
         <button
           className="text-[#329f9a] border border-[#329f9a] rounded-lg py-2 px-4 mt-4 self-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
           onClick={navigateToBlogDashboard}
         >
           Go to Blog Dashboard

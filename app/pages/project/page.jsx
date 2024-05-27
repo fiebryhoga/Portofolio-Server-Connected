@@ -18,14 +18,14 @@ const Project = () => {
 
   return (
     <div className="h-full flex flex-col">
-      
-
-      <Header>Blog</Header>
+      <Header>Project</Header>
 
       <div className="flex flex-col px-6 sm:px-12 pt-12 gap-6 sm:gap-4 md:gap-8 lg:px-28">
         <ProjectList />
         <button
           className="text-[#329f9a] border border-[#329f9a] rounded-lg py-2 px-4 mt-4 self-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
           onClick={navigateToBlogDashboard}
         >
           See More
