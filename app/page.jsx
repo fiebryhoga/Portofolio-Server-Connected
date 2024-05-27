@@ -7,6 +7,8 @@ import "aos/dist/aos.css";
 import Home from "./pages/home/page";
 import About from "./pages/about/page";
 import Blog from "./pages/blog/page";
+import Project from "./pages/project/page";
+import Tools from "./pages/tools/page";
 // import About from "@/app/Pages/About/page";
 
 const Page = () => {
@@ -27,6 +29,13 @@ const Page = () => {
         <div id="blog">
           <Blog />
         </div>
+        <div id="project">
+          <Project />
+        </div>
+        <div id="tools">
+          <Tools />
+        </div>
+        
         <div className="h-screen">hahaha</div>
         
       </div>

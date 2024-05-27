@@ -19,7 +19,6 @@ const Navbar = () => {
   const navList = [
     { nav: "Beranda", id: "home" },
     { nav: "About", id: "about" },
-    { nav: "Tools", id: "tools" },
     { nav: "Blog", id: "blog" },
     { nav: "Project", id: "project" },
     { nav: "Contact", id: "contact" },

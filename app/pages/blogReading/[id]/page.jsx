@@ -13,7 +13,7 @@ const BlogReading = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`https://localhost:8000/api/blogs/${id}`);
+        const res = await fetch(`http://localhost:8000/api/blogs/${id}`);
         if (!res.ok) {
           throw new Error("Blog not found");
         }
