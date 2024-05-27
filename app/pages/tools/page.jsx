@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Header from "@/app/components/layout/Header";
 import ToolsCard from "@/app/components/tools/ToolsCard";
