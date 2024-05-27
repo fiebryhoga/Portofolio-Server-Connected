@@ -29,7 +29,7 @@ const Tools = () => {
   const visibleTools = isSmallScreen && !showAll ? tools.slice(0, 8) : tools;
 
   return (
-    <div className="h-full flex flex-col mt-8">
+    <div className="h-full flex flex-col mt-16 md:mt-12">
       <Header>Technology And Tools</Header>
       <div className="lg:px-28 md:px-12 sm:px-12 px-6 mt-12 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {visibleTools.map((tool) => (

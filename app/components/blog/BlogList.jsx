@@ -12,13 +12,13 @@ const BlogList = ({ blogs, showAllCards }) => {
   const getAosData = (index) => {
     if (size.width < 768) {
       return {
-        "data-aos": "fade-up",
+        "data-aos": "zoom-in-up",
         "data-aos-duration": "1000",
         "data-aos-anchor-placement": "top-center"
       };
     } else {
       return {
-        "data-aos": index % 2 === 0 ? "fade-right" : "fade-left",
+        "data-aos": index % 2 === 0 ? "zoom-in-right" : "zoom-in-left",
         "data-aos-duration": "1000",
         "data-aos-anchor-placement": "top-center",
       };

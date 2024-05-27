@@ -13,12 +13,12 @@ const ProjectList = () => {
     if (size.width < 768) {
       return {
         "data-aos": "fade-up",
-        "data-aos-duration": "3000",
+        "data-aos-duration": "1000",
       };
     } else {
       return {
-        "data-aos": index % 2 === 0 ? "fade-right" : "fade-left",
-        "data-aos-duration": "3000",
+        "data-aos": index % 2 === 0 ? "zoom-in-right" : "zoom-in-left",
+        "data-aos-duration": "1000",
       };
     }
   };
