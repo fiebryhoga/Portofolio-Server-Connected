@@ -2,34 +2,19 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useEffect } from "react";
-
 import { useRouter } from "next/navigation";
 import Header from "@/app/components/layout/Header";
 import BlogList from "@/app/components/blog/BlogList";
+import blogsData from "@/app/data/blog"; // pastikan import dari lokasi yang benar
 
 const Blog = () => {
   const router = useRouter();
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState(blogsData); // langsung set data dari blog.js
   const [error, setError] = useState(null);
 
-
-
+  // Tidak perlu fetch data dari API, karena kita sudah memiliki data dari blogsData
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch("http://localhost:8000/api/blogs");
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await res.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-        setError("Failed to load blogs");
-      }
-    };
-
-    fetchBlogs();
+    setBlogs(blogsData);
   }, []);
 
   const navigateToBlogDashboard = () => {

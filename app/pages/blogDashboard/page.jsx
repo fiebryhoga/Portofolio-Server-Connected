@@ -5,31 +5,14 @@ import BlogList from "@/app/components/blog/BlogList";
 import Header from "@/app/components/layout/Header";
 import { GoChevronLeft } from "react-icons/go";
 import Link from "next/link";
+import blogsData from "@/app/data/blog"; // pastikan import dari lokasi yang benar
 
 const BlogDashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showAllCards, setShowAllCards] = useState(true);
   const [prevShowAllCards, setPrevShowAllCards] = useState(true);
-  const [blogs, setBlogs] = useState([]);
-  const [filteredBlogs, setFilteredBlogs] = useState([]);
-
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch("http://localhost:8000/api/blogs");
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await res.json();
-        setBlogs(data);
-        setFilteredBlogs(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
+  const [blogs, setBlogs] = useState(blogsData); // langsung set data dari blog.js
+  const [filteredBlogs, setFilteredBlogs] = useState(blogsData);
 
   useEffect(() => {
     setPrevShowAllCards(showAllCards);
@@ -49,7 +32,6 @@ const BlogDashboard = () => {
     }
   };
 
-
   const handleSeeMoreClick = () => {
     setShowAllCards(true);
   };
@@ -61,7 +43,11 @@ const BlogDashboard = () => {
   return (
     <div className="flex flex-col min-h-screen w-full gap-4 py-12 bg-[#060911]">
       <Link href="/#blog">
-        <GoChevronLeft className=" md:ml-12 lg:ml-28 ml-6 sm:ml-12" size={25} color="white" />
+        <GoChevronLeft
+          className=" md:ml-12 lg:ml-28 ml-6 sm:ml-12"
+          size={25}
+          color="white"
+        />
       </Link>
       <Header>Blog Dashboard</Header>
       <div className="w-full md:px-12 sm:px-12 px-6 lg:px-28 mt-8 gap-10 flex flex-col">
@@ -76,7 +62,6 @@ const BlogDashboard = () => {
           <p className="text-white">Tidak ada blog yang ditemukan</p>
         )}
         <BlogList blogs={filteredBlogs} showAllCards={true} />
-        
       </div>
     </div>
   );

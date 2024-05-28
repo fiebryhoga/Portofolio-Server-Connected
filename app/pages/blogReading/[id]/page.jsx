@@ -1,8 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { GoChevronLeft } from "react-icons/go";
+import ImageContainer from "@/app/components/blog/ImageContainer";
+import blogsData from "@/app/data/blog"; // pastikan import dari lokasi yang benar
 
 const BlogReading = () => {
   const { id } = useParams();
@@ -11,14 +14,13 @@ const BlogReading = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchBlog = async () => {
+    const fetchBlog = () => {
       try {
-        const res = await fetch(`http://localhost:8000/api/blogs/${id}`);
-        if (!res.ok) {
+        const blog = blogsData.find((blog) => blog.id === parseInt(id));
+        if (!blog) {
           throw new Error("Blog not found");
         }
-        const data = await res.json();
-        setBlog(data);
+        setBlog(blog);
       } catch (error) {
         setError(error.message);
       }
@@ -36,36 +38,39 @@ const BlogReading = () => {
   }
 
   return (
-    <div
-      className="flex flex-col min-h-screen w-full gap-4 py-12 px-28 bg-[#060911] scroll-smooth"
-      style={{ transition: "scroll-behavior 0.5s ease-in-out" }}
-    >
-      <button onClick={() => router.back()}>
+    <div className="flex flex-col min-h-screen w-full pt-8 pb-10 lg:py-12 px-6 xl:px-28 bg-[#060911]">
+      <button onClick={() => router.back()} className="mb-4">
         <GoChevronLeft size={25} color="white" />
       </button>
       <div className="w-full flex flex-col gap-4">
-        <h1 className="text-3xl font-bold text-white">{blog.judul}</h1>
-        <div className="text-white text-opacity-80 text-sm mb-4">
+        <h1 className="text-lg xl:text-3xl text-opacity-90 font-bold tracking-wider text-[#329f9a]">
+          {blog.judul}
+        </h1>
+        <div className="text-white text-opacity-60 font-medium text-xs mb-4">
           {blog.penulis} - {blog.tanggal}
         </div>
-        <div className="flex flex-row w-full gap-12">
-          <div className="w-full flex flex-col">
+        <ImageContainer src={blog.image} alt="AI - Image" />
+
+        <div className="flex flex-row w-full">
+          <div className="w-full flex flex-col gap-10">
             {blog.contents.map((subisi) => (
               <div
                 key={subisi.id}
-                className="mb-6 text-white"
+                className="text-white flex flex-col gap-3"
                 id={`subisi-${subisi.id}`}
               >
-                <h2 className="text-2xl font-medium mb-2">{subisi.judulsub}</h2>
+                <h2 className="text-base font-semibold mb-2 text-[#329f9a]">
+                  {subisi.judulsub}
+                </h2>
                 <div
-                  className="leading-6 flex flex-col gap-4 tracking-wide"
+                  className="leading-6 flex flex-col gap-4 tracking-wide text-xs text-justify text-opacity-80 text-white"
                   dangerouslySetInnerHTML={{ __html: subisi.materi }}
                 ></div>
               </div>
             ))}
           </div>
-          <div className="w-1/6 min-h-8">
-            <div className="fixed">
+          {/* <div className="w-1/4">
+            <div className="sticky top-12">
               <h4 className="text-white text-lg font-semibold">On This Page</h4>
               <div className="flex flex-col gap-2 mt-4">
                 {blog.contents.map((subisi) => (
@@ -81,7 +86,7 @@ const BlogReading = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
