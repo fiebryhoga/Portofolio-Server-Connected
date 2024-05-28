@@ -1,18 +1,14 @@
-/* eslint-disable @next/next/no-css-tags */
-/* eslint-disable @next/next/no-img-element */
-"use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Header from "@/app/components/layout/Header";
 import BlogList from "@/app/components/blog/BlogList";
-import blogsData from "@/app/data/blog"; // pastikan import dari lokasi yang benar
+import blogsData from "@/app/data/blog";
 
 const Blog = () => {
   const router = useRouter();
-  const [blogs, setBlogs] = useState(blogsData); // langsung set data dari blog.js
+  const [blogs, setBlogs] = useState(blogsData);
   const [error, setError] = useState(null);
 
-  // Tidak perlu fetch data dari API, karena kita sudah memiliki data dari blogsData
   useEffect(() => {
     setBlogs(blogsData);
   }, []);
@@ -40,7 +36,11 @@ const Blog = () => {
         {error ? (
           <p className="text-red-500">{error}</p>
         ) : (
-          <BlogList blogs={blogs.slice(0, 6)} showAllCards={false} />
+          <BlogList
+            blogs={blogs.slice(0, 6)}
+            showAllCards={false}
+            enableAos={true}
+          />
         )}
         <button
           className="text-[#329f9a] border border-[#329f9a] rounded-lg py-2 px-4 mt-4 self-center"

@@ -61,7 +61,7 @@ const BlogDashboard = () => {
         {searchTerm !== "" && filteredBlogs.length === 0 && (
           <p className="text-white">Tidak ada blog yang ditemukan</p>
         )}
-        <BlogList blogs={filteredBlogs} showAllCards={true} />
+        <BlogList blogs={filteredBlogs} showAllCards={true} enableAos={false} />
       </div>
     </div>
   );

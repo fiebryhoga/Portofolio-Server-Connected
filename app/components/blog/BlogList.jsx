@@ -1,20 +1,17 @@
 import React from "react";
-
-
 import BlogCard from "./BlogCard";
 import useWindowSize from "@/app/hooks/useWindowSize"; // Ensure the path is correct
 
-const BlogList = ({ blogs, showAllCards }) => {
-
-
+const BlogList = ({ blogs, showAllCards, enableAos }) => {
   const size = useWindowSize();
 
   const getAosData = (index) => {
+    if (!enableAos) return {};
     if (size.width < 768) {
       return {
         "data-aos": "zoom-in-up",
         "data-aos-duration": "1000",
-        "data-aos-anchor-placement": "top-center"
+        "data-aos-anchor-placement": "top-center",
       };
     } else {
       return {
