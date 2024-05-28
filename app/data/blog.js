@@ -200,7 +200,7 @@ const blogs = [
   {
     id: 3,
     penulis: "Dimas Fiebry",
-    tanggal: "2024-05-29",
+    tanggal: "2024-05-12",
     image: "/assets/image/blog/blog3/blog3.jpg",
     judul: "Jurus Jitu Agar Tidak Tertidur di Kelas Pagi",
     deskripsi:
