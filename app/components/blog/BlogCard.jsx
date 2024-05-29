@@ -27,7 +27,7 @@ const BlogCard = ({ id, penulis, tanggal, judul, deskripsi, image }) => {
         <p className="text-white text-opacity-40 lg:text-sm text-xs">
           {penulis}, {tanggal}
         </p>
-        <h4 className="text-xl font-bold text-white md:text-base">
+        <h4 className="text-base font-bold text-white md:text-base">
           {truncateText(judul, 5)}
         </h4>
         <p className="lg:text-sm font-normal text-white text-opacity-80 tracking-wide md:text-xs">
