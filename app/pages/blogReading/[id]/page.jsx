@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { GoChevronLeft } from "react-icons/go";
 import ImageContainer from "@/app/components/blog/ImageContainer";
-import blogsData from "@/app/data/blog"; // Ensure the import path is correct
+import blogsData from "@/app/data/blog";
 
 const BlogReading = () => {
   const { id } = useParams();

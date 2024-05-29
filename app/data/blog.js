@@ -204,7 +204,7 @@ const blogs = [
     image: "/assets/image/blog/blog3/blog3.jpg",
     judul: "Jurus Jitu Agar Tidak Tertidur di Kelas Pagi",
     deskripsi:
-      "Bangun pagi memang sulit, tetapi dengan beberapa trik lucu ini, Anda bisa tetap terjaga dan fokus di kelas pagi...",
+      "Bangun pagi memang sulit, tetapi dengan beberapa trik lucu ini, membuat bisa tetap terjaga dan fokus di kelas pagi...",
     created_at: "2024-05-29T12:00:00.000000Z",
     updated_at: "2024-05-29T12:00:00.000000Z",
     contents: [
