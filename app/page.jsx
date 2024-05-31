@@ -10,7 +10,7 @@ import Blog from "./pages/blog/page";
 import Project from "./pages/project/page";
 import Tools from "./pages/tools/page";
 import Navbar from "./components/layout/NavbarBox";
-// import About from "@/app/Pages/About/page";
+import Footer from "./components/layout/Footer";// import About from "@/app/Pages/About/page";
 
 const Page = () => {
   useEffect(() => {
@@ -37,9 +37,7 @@ const Page = () => {
         <div id="tools">
           <Tools />
         </div>
-        
-        <div className="h-screen">hahaha</div>
-        
+        <Footer></Footer>        
       </div>
     </main>
   );

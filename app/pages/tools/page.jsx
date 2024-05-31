@@ -29,7 +29,7 @@ const Tools = () => {
   const visibleTools = isSmallScreen && !showAll ? tools.slice(0, 8) : tools;
 
   return (
-    <div className="h-full flex flex-col mt-16 md:mt-12">
+    <div className="h-full flex flex-col mt-16 md:mt-12 pb-6">
       <Header>Technology And Tools</Header>
       <div className="lg:px-28 md:px-12 sm:px-12 px-6 mt-12 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {visibleTools.map((tool) => (
@@ -41,7 +41,7 @@ const Tools = () => {
           <button
             onClick={toggleShowAll}
             className="text-[#329f9a] border border-[#329f9a] rounded-lg py-2 px-4 mt-4 self-center"
-            data-aos="fade-up"
+            data-aos="zoom-up"
             data-aos-duration="1000"
           >
             {showAll ? "Hide" : "Show More"}

@@ -219,12 +219,12 @@ const blogs = [
           <p>
             Jika kopi hitam dan cabe rawit terlalu ekstrem, cobalah smoothie yang dibuat dari campuran buah-buahan segar dengan tambahan yogurt dan sedikit jahe. Kombinasi ini tidak hanya menyehatkan tetapi juga memberikan dorongan energi yang Anda butuhkan. Jangan lupa untuk menambahkan madu untuk sentuhan manis yang menyegarkan.
           </p>
+                      <img src="/assets/image/blog/blog3/img1.jpg" alt="Future of Blockchain" class="object-cover w-full max-h-52 sm:max-h-72 sm:mb-6 bg-transparent rounded-md">
+
           <p>
             Bagi yang suka sesuatu yang lebih simpel, sebatang cokelat hitam juga bisa menjadi pilihan. Cokelat mengandung kafein dan antioksidan yang bisa membantu meningkatkan fokus dan mood Anda. Nikmati dengan sedikit teh hijau, dan Anda siap menghadapi hari.
           </p>
-          <p>
-            Jika Anda benar-benar berani, cobalah mencampurkan sedikit wasabi dalam sarapan Anda. Tidak hanya akan membuat mata Anda terbuka lebar, tetapi juga memberikan pengalaman yang tidak akan terlupakan!
-          </p>
+          
         `,
         created_at: "2024-05-29T12:00:00.000000Z",
         updated_at: "2024-05-29T12:00:00.000000Z",
@@ -235,6 +235,8 @@ const blogs = [
         judulsub: "Penampilan Mengejutkan",
         materi: `
           <p>
+                                <img src="/assets/image/blog/blog3/img2.jpg" alt="Future of Blockchain" class="object-cover w-full max-h-52 sm:max-h-72 sm:mb-6 bg-transparent rounded-md">
+
             Selanjutnya, jangan lupakan jurus "Penampilan Mengejutkan". Cobalah datang ke kelas dengan outfit yang tidak biasa, seperti piyama lengkap dengan topi tidur. Selain membuat Anda merasa nyaman, ini juga akan mengundang tawa dari teman-teman sekelas dan dosen. Ketawa bareng di pagi hari bisa jadi cara yang efektif untuk mengusir kantuk. Pastikan hanya dilakukan saat dosen Anda punya selera humor yang baik!
           </p>
           <p>
@@ -255,6 +257,8 @@ const blogs = [
           <p>
             Teman sebangku yang aktif dan cerewet bisa menjadi sekutu terbaik Anda dalam melawan kantuk. Pastikan Anda duduk di sebelah teman yang selalu punya cerita menarik atau ide-ide konyol untuk dibagikan. Obrolan kecil sebelum kelas dimulai atau saat jeda bisa membantu menjaga mata Anda tetap terbuka. Tapi ingat, jangan sampai obrolan ini malah bikin dosen Anda terganggu!
           </p>
+                                          <img src="/assets/image/blog/blog3/img3.jpg" alt="Future of Blockchain" class="object-cover w-full max-h-52 sm:max-h-72 sm:mb-6 bg-transparent rounded-md">
+
           <p>
             Selain itu, Anda bisa membuat "kode rahasia" dengan teman sebangku untuk saling mengingatkan jika salah satu mulai terlihat mengantuk. Misalnya, dengan mencubit pelan atau memberikan sinyal tertentu. Cara ini tidak hanya membantu Anda tetap terjaga, tetapi juga mempererat hubungan pertemanan.
           </p>
@@ -271,6 +275,8 @@ const blogs = [
         judulsub: "Gunakan Alat Bantu Visual",
         materi: `
           <p>
+                                                    <img src="/assets/image/blog/blog3/img4.jpg" alt="Future of Blockchain" class="object-cover w-full max-h-52 sm:max-h-72 sm:mb-6 bg-transparent rounded-md">
+
             Alat bantu visual seperti kacamata hitam bisa menjadi senjata rahasia Anda. Bukan untuk tidur diam-diam, tetapi untuk menyamarkan tatapan kosong saat Anda mulai kehilangan fokus. Selain itu, membawa spidol warna-warni untuk mencatat bisa membuat aktivitas mencatat lebih menarik. Warna-warna cerah dan corat-coret kreatif bisa menjaga Anda tetap terlibat dengan materi yang diajarkan.
           </p>
           <p>
