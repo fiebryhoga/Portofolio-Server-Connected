@@ -5,18 +5,30 @@ import BlogList from "@/app/components/blog/BlogList";
 import Header from "@/app/components/layout/Header";
 import { GoChevronLeft } from "react-icons/go";
 import Link from "next/link";
-import blogsData from "@/app/data/blog"; // pastikan import dari lokasi yang benar
 
 const BlogDashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [showAllCards, setShowAllCards] = useState(true);
-  const [prevShowAllCards, setPrevShowAllCards] = useState(true);
-  const [blogs, setBlogs] = useState(blogsData); // langsung set data dari blog.js
-  const [filteredBlogs, setFilteredBlogs] = useState(blogsData);
+  const [blogs, setBlogs] = useState([]);
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setPrevShowAllCards(showAllCards);
-  }, [showAllCards]);
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/blogs");
+        if (!response.ok) {
+          throw new Error("Failed to fetch blogs");
+        }
+        const data = await response.json();
+        setBlogs(data);
+        setFilteredBlogs(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value.toLowerCase();
@@ -32,19 +44,11 @@ const BlogDashboard = () => {
     }
   };
 
-  const handleSeeMoreClick = () => {
-    setShowAllCards(true);
-  };
-
-  const handleHideClick = () => {
-    setShowAllCards(false);
-  };
-
   return (
     <div className="flex flex-col min-h-screen w-full gap-4 py-12 bg-[#060911]">
       <Link href="/#blog">
         <GoChevronLeft
-          className=" md:ml-12 lg:ml-28 ml-6 sm:ml-12"
+          className="md:ml-12 lg:ml-28 ml-6 sm:ml-12"
           size={25}
           color="white"
         />
@@ -58,10 +62,15 @@ const BlogDashboard = () => {
           value={searchTerm}
           onChange={handleInputChange}
         />
-        {searchTerm !== "" && filteredBlogs.length === 0 && (
-          <p className="text-white">Tidak ada blog yang ditemukan</p>
+        {error ? (
+          <p className="text-red-500">{error}</p>
+        ) : (
+          <BlogList
+            blogs={filteredBlogs}
+            showAllCards={true}
+            enableAos={false}
+          />
         )}
-        <BlogList blogs={filteredBlogs} showAllCards={true} enableAos={false} />
       </div>
     </div>
   );

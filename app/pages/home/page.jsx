@@ -1,43 +1,82 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
-const BackgroundDiv = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  background-repeat: no-repeat;
-  background-position: center calc(100% - 25px);
-  background-size: 100%;
-  background-image: url("/assets/image/home/Background.png");
-  background-opacity: 80%;
-  position: relative;
 
-  @media (min-width: 768px) {
-    height: 100vh;
-    background-size: 700px;
-    background-position: right calc(100% - 60px);
-  }
-  @media (min-width: 1024px) {
-    height: 120vh;
-    background-size: 900px;
-    background-position: right calc(100% - 80px);
-  }
-`;
 
 const Home = () => {
+  const [biodata, setBiodata] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    AOS.init();
+    const fetchBiodata = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/biodatas", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setBiodata(data[0]); // Asumsi data adalah array dan mengambil elemen pertama
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBiodata();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error:</div>;
+  }
+
+  if (!biodata) {
+    return <div>No biodata found</div>;
+  }
+
+  const { gretting, name, job, description, image, contact } = biodata;
+
+  const BackgroundDiv = styled.div`
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center calc(100% - 25px);
+    background-image: url("${image}");
+    background-size: 100%;
+    background-opacity: 80%;
+    position: relative;
+
+    @media (min-width: 768px) {
+      height: 100vh;
+      background-size: 700px;
+      background-position: right calc(100% - 60px);
+    }
+    @media (min-width: 1024px) {
+      height: 120vh;
+      background-size: 900px;
+      background-position: right calc(100% - 80px);
+    }
+  `;
+
   return (
-    <BackgroundDiv className="">
+    <BackgroundDiv>
       <div className="h-16 sm-h-8 md:h-10 lg:hidden xl:h-16 bg-[#080F17] "></div>
       <svg
         className="z-20 top-0 opacity-20 w-full lg:absolute"
@@ -58,7 +97,7 @@ const Home = () => {
             data-aos-duration="1000"
             data-aos-delay="300"
           >
-            Hello There! I'm
+            {gretting}
           </h3>
           <h1
             className="text-lg sm:text-xl font-semibold tracking-wider text-[#c3e7e5] lg:text-4xl"
@@ -66,7 +105,7 @@ const Home = () => {
             data-aos-duration="1000"
             data-aos-delay="500"
           >
-            Dimas Fiebry Prayhoga Putra
+            {name}
           </h1>
           <h3
             className="text-xs sm:text-sm font-medium tracking-wide text-[#c3e7e5] lg:text-lg"
@@ -74,7 +113,7 @@ const Home = () => {
             data-aos-duration="2000"
             data-aos-delay="300"
           >
-            Brawijaya University Student
+            {job}
           </h3>
           <p
             className="text-xs font-normal tracking-wide py-6 opacity-60 leading-5 text-justify md:pr-32 text-[#c3e7e5] lg:w-[800px] lg:text-base"
@@ -82,18 +121,19 @@ const Home = () => {
             data-aos-duration="2000"
             data-aos-delay="500"
           >
-            I am interested in a career as a frontend developer. I dream of
-            coding while sipping coffee and enjoying the sunset. I will help you
-            to make web or mobile application, I have good team work.
+            {description}
           </p>
-          <button
-            className="z-40 mt-0 py-2 text-sm rounded-full bg-[#329f9a] w-32 hover:bg-[#e9eded] hover:text-[#329f9a] transition-all ease-in-out duration-500"
+          <Link
+            href={`mailto:${contact}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center z-40 mt-0 py-2 text-sm rounded-full bg-[#329f9a] w-32 hover:bg-[#e9eded] hover:text-[#329f9a] transition-all ease-in-out duration-500"
             data-aos="fade-up"
             data-aos-duration="3000"
             data-aos-delay="300"
           >
             Contact Me
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -104,7 +144,7 @@ const Home = () => {
       >
         <path
           fill="#080F17"
-          fill-opacity="1"
+          fillOpacity="1"
           d="M0,96L21.8,106.7C43.6,117,87,139,131,128C174.5,117,218,75,262,80C305.5,85,349,139,393,154.7C436.4,171,480,149,524,165.3C567.3,181,611,235,655,218.7C698.2,203,742,117,785,122.7C829.1,128,873,224,916,229.3C960,235,1004,149,1047,96C1090.9,43,1135,21,1178,58.7C1221.8,96,1265,192,1309,192C1352.7,192,1396,96,1418,48L1440,0L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"
         ></path>
       </svg>

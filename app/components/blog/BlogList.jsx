@@ -1,6 +1,6 @@
 import React from "react";
 import BlogCard from "./BlogCard";
-import useWindowSize from "@/app/hooks/useWindowSize"; // Ensure the path is correct
+import useWindowSize from "@/app/hooks/useWindowSize";
 
 const BlogList = ({ blogs, showAllCards, enableAos }) => {
   const size = useWindowSize();

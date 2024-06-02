@@ -1,12 +1,8 @@
 import React from "react";
-
 import ProjectCard from "./ProjectCard";
-import project from "@/app/data/project";
 import useWindowSize from "@/app/hooks/useWindowSize";
 
-const ProjectList = () => {
-
-
+const ProjectList = ({ projects }) => {
   const size = useWindowSize();
 
   const getAosData = (index) => {
@@ -26,7 +22,7 @@ const ProjectList = () => {
   return (
     <div className="w-full flex flex-col">
       <div className="grid md:grid-cols-2 gap-8 grid-cols-1">
-        {project.map((project, index) => (
+        {projects.map((project, index) => (
           <div key={project.id} {...getAosData(index)}>
             <ProjectCard project={project} />
           </div>

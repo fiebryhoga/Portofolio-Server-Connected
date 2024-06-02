@@ -1,22 +1,33 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Header from "@/app/components/layout/Header";
 import BlogList from "@/app/components/blog/BlogList";
-import blogsData from "@/app/data/blog";
 
 const Blog = () => {
   const router = useRouter();
-  const [blogs, setBlogs] = useState(blogsData);
+  const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setBlogs(blogsData);
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/blogs");
+        if (!response.ok) {
+          throw new Error("Failed to fetch blogs");
+        }
+        const data = await response.json();
+        setBlogs(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchBlogs();
   }, []);
 
   const navigateToBlogDashboard = () => {
-    router.push("/pages/blogDashboard");
+    router.push("/blogDashboard");
   };
 
   return (

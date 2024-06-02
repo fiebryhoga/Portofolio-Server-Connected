@@ -19,7 +19,7 @@ const Tooltip = ({ text, visible }) => {
   );
 };
 
-const Navbar = () => {
+const NavbarBox = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [tooltipVisible, setTooltipVisible] = useState(null);
@@ -128,4 +128,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarBox;

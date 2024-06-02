@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { useRouter } from "next/navigation"; // Import useRouter
+import { useRouter } from "next/navigation";
 
-// Utility function to truncate text by word limit
 const truncateText = (text, wordLimit) => {
   const words = text.split(" ");
   if (words.length > wordLimit) {
@@ -12,16 +11,16 @@ const truncateText = (text, wordLimit) => {
 };
 
 const BlogCard = ({ id, penulis, tanggal, judul, deskripsi, image }) => {
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/pages/blogReading/${id}`); // Redirect to the blog reading page with the blog id
+    router.push(`/pages/blogReading/${id}`);
   };
 
   return (
     <div
       onClick={handleClick}
-      className="flex flex-row w-full border-[0.1px] md:h-40 border-white border-opacity-20 lg:h-40 py-4 px-8 justify-between rounded-lg bg-[#080F17] lg:gap-4 cursor-pointer" // Add cursor-pointer to indicate it's clickable
+      className="flex flex-row w-full border-[0.1px] md:h-40 border-white border-opacity-20 lg:h-40 py-4 px-8 justify-between rounded-lg bg-[#080F17] lg:gap-4 cursor-pointer"
     >
       <div className="flex flex-col gap-2 text-xs w-3/4">
         <p className="text-white text-opacity-40 lg:text-sm text-xs">
